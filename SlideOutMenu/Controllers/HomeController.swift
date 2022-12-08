@@ -14,35 +14,94 @@ class HomeController: UITableViewController {
         
         tableView.backgroundColor = .red
         setupNavigationItems()
+        
+        // Pan Gesture
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        view.addGestureRecognizer(panGesture)
     }
     
-    let menuController = MenuController()
+    @objc func handlePan(gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        if gesture.state == .changed {
+            var x = translation.x
+            if isMenuOpened {
+                x += menuWidth
+            }
+            x = min(menuWidth, x)
+            x = max(0, x)
+            let transform = CGAffineTransform(translationX: x, y: 0)
+            menuController.view.transform = transform
+            navigationController?.view.transform = transform
+        } else if gesture.state == .ended {
+            handleEnded(gesture: gesture)
+        }
+    }
+    
+    fileprivate func handleEnded(gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        let velocity = gesture.velocity(in: view)
+        print("Velocity:", velocity.x)
+        if isMenuOpened {
+            if abs(velocity.x) > velocityOpenThreshold {
+                handleHide()
+                return
+            }
+            if abs(translation.x) < menuWidth / 2 {
+                handleOpen()
+            } else {
+                handleHide()
+            }
+        } else {
+            if velocity.x > velocityOpenThreshold {
+                handleOpen()
+                return
+            }
+            if translation.x < menuWidth / 2 {
+                handleHide()
+            } else {
+                handleOpen()
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupMenuController()
+    }
+    
+    fileprivate let menuController = MenuController()
+    fileprivate var isMenuOpened = false
+    fileprivate var velocityOpenThreshold: CGFloat = 500
     
     fileprivate let menuWidth: CGFloat = 300
     
-    @objc func handleOpen() {
-        // initial position of the animation
-        menuController.view.frame = CGRect(x: -menuWidth, y: 0, width: menuWidth, height: self.view.frame.height)
-        let mainWindow = view.window?.windowScene?.keyWindow
-        mainWindow?.addSubview(menuController.view)
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1) {
-            // final position to animate
-            self.menuController.view.transform = CGAffineTransform(translationX: self.menuWidth, y: 0)
+    fileprivate func performAnimations(transform: CGAffineTransform) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut) {
+            self.menuController.view.transform = transform
+//            self.view.transform = transform
+            // cf.
+            self.navigationController?.view.transform = transform
         }
-        
-        addChild(menuController)
+    }
+    
+    @objc func handleOpen() {
+        isMenuOpened = true
+        performAnimations(transform: CGAffineTransform(translationX: self.menuWidth, y: 0))
     }
     
     @objc func handleHide() {
-        print("Hiding memnu...")
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1) {
-            // final position to animate
-            self.menuController.view.transform = .identity
-        }
-        
-//        menuController.view.removeFromSuperview()
-//        menuController.removeFromParent()
+        isMenuOpened = false
+        performAnimations(transform: .identity)
+    }
+    
+    // MARK: Fileprivate
+    
+    fileprivate func setupMenuController() {
+        menuController.view.frame = CGRect(x: -menuWidth, y: 0, width: menuWidth, height: self.view.frame.height)
+        let mainWindow = view.window?.windowScene?.keyWindow
+        mainWindow?.addSubview(menuController.view)
+        addChild(menuController)
     }
     
     fileprivate func setupNavigationItems() {
