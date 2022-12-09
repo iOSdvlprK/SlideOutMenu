@@ -29,8 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let navController = UINavigationController(rootViewController: HomeController())
-        window.rootViewController = navController
+//        let navController = UINavigationController(rootViewController: HomeController())
+        window.rootViewController = BaseSlidingController()
         self.window = window
         window.makeKeyAndVisible()
     }
