@@ -15,7 +15,28 @@ class HomeController: UITableViewController {
         tableView.backgroundColor = .red
         setupNavigationItems()
         
-        // Pan Gesture
+        setupPanGesture()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupMenuController()
+        setupDarkCoverView()
+    }
+    
+    let darkCoverView = UIView()
+    
+    fileprivate func setupDarkCoverView() {
+        darkCoverView.alpha = 0
+        darkCoverView.backgroundColor = UIColor(white: 0, alpha: 0.8)
+        darkCoverView.isUserInteractionEnabled = false
+        let mainWindow = view.window?.windowScene?.keyWindow
+        mainWindow?.addSubview(darkCoverView)
+        darkCoverView.frame = mainWindow?.frame ?? .zero
+    }
+    
+    fileprivate func setupPanGesture() {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         view.addGestureRecognizer(panGesture)
     }
@@ -32,6 +53,8 @@ class HomeController: UITableViewController {
             let transform = CGAffineTransform(translationX: x, y: 0)
             menuController.view.transform = transform
             navigationController?.view.transform = transform
+            darkCoverView.transform = transform
+            darkCoverView.alpha = x / menuWidth
         } else if gesture.state == .ended {
             handleEnded(gesture: gesture)
         }
@@ -64,12 +87,6 @@ class HomeController: UITableViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        setupMenuController()
-    }
-    
     fileprivate let menuController = MenuController()
     fileprivate var isMenuOpened = false
     fileprivate var velocityOpenThreshold: CGFloat = 500
@@ -82,6 +99,13 @@ class HomeController: UITableViewController {
 //            self.view.transform = transform
             // cf.
             self.navigationController?.view.transform = transform
+            self.darkCoverView.transform = transform
+//            if transform == .identity {
+//                self.darkCoverView.alpha = 0
+//            } else {
+//                self.darkCoverView.alpha = 1
+//            }
+            self.darkCoverView.alpha = transform == .identity ? 0 : 1
         }
     }
     
