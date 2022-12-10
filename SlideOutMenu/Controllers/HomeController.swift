@@ -13,17 +13,17 @@ class HomeController: UITableViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         tableView.backgroundColor = .red
-        setupNavigationItems()
+//        setupNavigationItems()
         
-        setupPanGesture()
+//        setupPanGesture()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        setupMenuController()
-        setupDarkCoverView()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        setupMenuController()
+//        setupDarkCoverView()
+//    }
     
     let darkCoverView = UIView()
     
