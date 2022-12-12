@@ -23,6 +23,14 @@ class BaseSlidingController: UIViewController {
         return v
     }()
     
+    let darkCoverView: UIView = {
+        let v = UIView()
+        v.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        v.alpha = 0
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +50,7 @@ class BaseSlidingController: UIViewController {
         x = max(0, x)
         
         redViewLeadingConstraint.constant = x
+        darkCoverView.alpha = x / menuWidth
         
         if gesture.state == .ended {
             handleEnded(gesture: gesture)
@@ -50,20 +59,54 @@ class BaseSlidingController: UIViewController {
     
     fileprivate func handleEnded(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
-        if translation.x < menuWidth / 2 {
-            redViewLeadingConstraint.constant = 0
-            isMenuOpened = false
+        let velocity = gesture.velocity(in: view)
+        
+        // the application of velocity and darkCoverView
+        if isMenuOpened {
+            if abs(velocity.x) > velocityThreshold {
+                closeMenu()
+                return
+            }
+            if abs(translation.x) < menuWidth / 2 {
+                openMenu()
+            } else {
+                closeMenu()
+            }
         } else {
-            redViewLeadingConstraint.constant = menuWidth
-            isMenuOpened = true
+            if velocity.x > velocityThreshold {
+                openMenu()
+                return
+            }
+            if translation.x < menuWidth / 2 {
+                closeMenu()
+            } else {
+                openMenu()
+            }
         }
+    }
+    
+    fileprivate func openMenu() {
+        isMenuOpened = true
+        redViewLeadingConstraint.constant = menuWidth
+        performAnimations()
+    }
+    
+    fileprivate func closeMenu() {
+        isMenuOpened = false
+        redViewLeadingConstraint.constant = 0
+        performAnimations()
+    }
+    
+    fileprivate func performAnimations() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut) {
             self.view.layoutIfNeeded()
+            self.darkCoverView.alpha = self.isMenuOpened ? 1 : 0
         }
     }
     
     var redViewLeadingConstraint: NSLayoutConstraint!
     fileprivate let menuWidth: CGFloat = 300
+    fileprivate let velocityThreshold: CGFloat = 500
     fileprivate var isMenuOpened = false
     
     fileprivate func setupViews() {
@@ -100,6 +143,7 @@ class BaseSlidingController: UIViewController {
         menuView.translatesAutoresizingMaskIntoConstraints = false
 
         redView.addSubview(homeView)
+        redView.addSubview(darkCoverView)
         blueView.addSubview(menuView)
         
         NSLayoutConstraint.activate([
@@ -111,7 +155,12 @@ class BaseSlidingController: UIViewController {
             menuView.topAnchor.constraint(equalTo: blueView.topAnchor),
             menuView.leadingAnchor.constraint(equalTo: blueView.leadingAnchor),
             menuView.bottomAnchor.constraint(equalTo: blueView.bottomAnchor),
-            menuView.trailingAnchor.constraint(equalTo: blueView.trailingAnchor)
+            menuView.trailingAnchor.constraint(equalTo: blueView.trailingAnchor),
+            
+            darkCoverView.topAnchor.constraint(equalTo: redView.topAnchor),
+            darkCoverView.leadingAnchor.constraint(equalTo: redView.leadingAnchor),
+            darkCoverView.bottomAnchor.constraint(equalTo: redView.bottomAnchor),
+            darkCoverView.trailingAnchor.constraint(equalTo: redView.trailingAnchor)
         ])
         
         addChild(homeController)
