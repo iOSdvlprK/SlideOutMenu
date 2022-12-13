@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D801769F29437C94004CEDC4 /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D801769E29437C94004CEDC4 /* BaseSlidingController.swift */; };
+		D850CFC22948CD78009AD909 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850CFC12948CD78009AD909 /* ProfileImageView.swift */; };
 		D87DD157293F6F5200022F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DD156293F6F5200022F97 /* AppDelegate.swift */; };
 		D87DD159293F6F5200022F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DD158293F6F5200022F97 /* SceneDelegate.swift */; };
 		D87DD15B293F6F5200022F97 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DD15A293F6F5200022F97 /* HomeController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		D801769E29437C94004CEDC4 /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
+		D850CFC12948CD78009AD909 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		D87DD153293F6F5200022F97 /* SlideOutMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87DD156293F6F5200022F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D87DD158293F6F5200022F97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				D893A4EA2948ACA100FD6337 /* SpacerView.swift */,
 				D888420A29474F710048920B /* CustomMenuHeaderView.swift */,
+				D850CFC12948CD78009AD909 /* ProfileImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D850CFC22948CD78009AD909 /* ProfileImageView.swift in Sources */,
 				D893A4EB2948ACA100FD6337 /* SpacerView.swift in Sources */,
 				D87DD16C293FD04900022F97 /* MenuController.swift in Sources */,
 				D888420B29474F710048920B /* CustomMenuHeaderView.swift in Sources */,
