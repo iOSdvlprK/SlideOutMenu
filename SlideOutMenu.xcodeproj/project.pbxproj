@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D801769F29437C94004CEDC4 /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D801769E29437C94004CEDC4 /* BaseSlidingController.swift */; };
+		D841D12E2949E7F900DEB383 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841D12D2949E7F900DEB383 /* MenuItemCell.swift */; };
 		D850CFC22948CD78009AD909 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850CFC12948CD78009AD909 /* ProfileImageView.swift */; };
 		D87DD157293F6F5200022F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DD156293F6F5200022F97 /* AppDelegate.swift */; };
 		D87DD159293F6F5200022F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DD158293F6F5200022F97 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		D801769E29437C94004CEDC4 /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
+		D841D12D2949E7F900DEB383 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		D850CFC12948CD78009AD909 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		D87DD153293F6F5200022F97 /* SlideOutMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87DD156293F6F5200022F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +35,7 @@
 		D87DD164293F6F5400022F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87DD16B293FD04900022F97 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D888420A29474F710048920B /* CustomMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuHeaderView.swift; sourceTree = "<group>"; };
-		D893A4EA2948ACA100FD6337 /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = SOURCE_ROOT; };
+		D893A4EA2948ACA100FD6337 /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpacerView.swift; path = SlideOutMenu/Views/SpacerView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				D893A4EA2948ACA100FD6337 /* SpacerView.swift */,
 				D888420A29474F710048920B /* CustomMenuHeaderView.swift */,
+				D841D12D2949E7F900DEB383 /* MenuItemCell.swift */,
 				D850CFC12948CD78009AD909 /* ProfileImageView.swift */,
 			);
 			path = Views;
@@ -183,6 +186,7 @@
 				D888420B29474F710048920B /* CustomMenuHeaderView.swift in Sources */,
 				D87DD15B293F6F5200022F97 /* HomeController.swift in Sources */,
 				D87DD157293F6F5200022F97 /* AppDelegate.swift in Sources */,
+				D841D12E2949E7F900DEB383 /* MenuItemCell.swift in Sources */,
 				D87DD159293F6F5200022F97 /* SceneDelegate.swift in Sources */,
 				D801769F29437C94004CEDC4 /* BaseSlidingController.swift in Sources */,
 			);
