@@ -19,6 +19,9 @@
 		D87DD16C293FD04900022F97 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DD16B293FD04900022F97 /* MenuController.swift */; };
 		D888420B29474F710048920B /* CustomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D888420A29474F710048920B /* CustomMenuHeaderView.swift */; };
 		D893A4EB2948ACA100FD6337 /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893A4EA2948ACA100FD6337 /* SpacerView.swift */; };
+		D8C16792294B1E7900854740 /* BookmarksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C16791294B1E7900854740 /* BookmarksController.swift */; };
+		D8C5D67F294E415A0058E834 /* BookmarksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5D67E294E415A0058E834 /* BookmarksVC.swift */; };
+		D8E2B591294A4B57005B2543 /* ListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2B590294A4B57005B2543 /* ListsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		D87DD16B293FD04900022F97 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D888420A29474F710048920B /* CustomMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuHeaderView.swift; sourceTree = "<group>"; };
 		D893A4EA2948ACA100FD6337 /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpacerView.swift; path = SlideOutMenu/Views/SpacerView.swift; sourceTree = SOURCE_ROOT; };
+		D8C16791294B1E7900854740 /* BookmarksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksController.swift; sourceTree = "<group>"; };
+		D8C5D67E294E415A0058E834 /* BookmarksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksVC.swift; sourceTree = "<group>"; };
+		D8E2B590294A4B57005B2543 /* ListsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,9 @@
 		D87DD16A293FD00100022F97 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D8C5D67E294E415A0058E834 /* BookmarksVC.swift */,
+				D8C16791294B1E7900854740 /* BookmarksController.swift */,
+				D8E2B590294A4B57005B2543 /* ListsController.swift */,
 				D801769D29437C32004CEDC4 /* Base */,
 				D87DD16B293FD04900022F97 /* MenuController.swift */,
 				D87DD15A293F6F5200022F97 /* HomeController.swift */,
@@ -180,14 +189,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C16792294B1E7900854740 /* BookmarksController.swift in Sources */,
 				D850CFC22948CD78009AD909 /* ProfileImageView.swift in Sources */,
 				D893A4EB2948ACA100FD6337 /* SpacerView.swift in Sources */,
 				D87DD16C293FD04900022F97 /* MenuController.swift in Sources */,
 				D888420B29474F710048920B /* CustomMenuHeaderView.swift in Sources */,
 				D87DD15B293F6F5200022F97 /* HomeController.swift in Sources */,
+				D8E2B591294A4B57005B2543 /* ListsController.swift in Sources */,
 				D87DD157293F6F5200022F97 /* AppDelegate.swift in Sources */,
 				D841D12E2949E7F900DEB383 /* MenuItemCell.swift in Sources */,
 				D87DD159293F6F5200022F97 /* SceneDelegate.swift in Sources */,
+				D8C5D67F294E415A0058E834 /* BookmarksVC.swift in Sources */,
 				D801769F29437C94004CEDC4 /* BaseSlidingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

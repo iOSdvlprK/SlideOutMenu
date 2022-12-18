@@ -49,7 +49,7 @@ class CustomMenuHeaderView: UIView {
         // a spacing hack with UIView
         let rightSpacerView = UIView()
         let arrangedSubviews = [
-            UIView(),
+//            UIView(),
             UIStackView(arrangedSubviews: [profileImageView, rightSpacerView]),
             nameLabel,
             usernameLabel,
