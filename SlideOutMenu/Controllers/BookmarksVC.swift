@@ -11,7 +11,6 @@ class BookmarksVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     let tableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor = .green
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()

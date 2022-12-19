@@ -27,6 +27,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UINavigationBar.appearance().compactScrollEdgeAppearance = navBarAppearance
         }
         
+        if #available(iOS 13.0, *) {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundColor = UIColor.white
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+            if #available(iOS 15.0, *) {
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
+        }
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
 //        let navController = UINavigationController(rootViewController: HomeController())

@@ -24,15 +24,15 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.frame = view.frame
         tableView.backgroundColor = .red
-//        setupNavigationItems()
-        
-//        setupPanGesture()
+        setupNavigationItems()
     }
     
     @objc func handleOpen() {
+        (view.window?.rootViewController as? BaseSlidingController)?.openMenu()
     }
     
     @objc func handleHide() {
+        (view.window?.rootViewController as? BaseSlidingController)?.closeMenu()
     }
     
     fileprivate func setupNavigationItems() {
