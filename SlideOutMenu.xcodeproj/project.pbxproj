@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D801769F29437C94004CEDC4 /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D801769E29437C94004CEDC4 /* BaseSlidingController.swift */; };
+		D82D05C32952E498007EFF21 /* ChatroomsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82D05C22952E498007EFF21 /* ChatroomsMenuController.swift */; };
 		D841D12E2949E7F900DEB383 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841D12D2949E7F900DEB383 /* MenuItemCell.swift */; };
 		D850CFC22948CD78009AD909 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850CFC12948CD78009AD909 /* ProfileImageView.swift */; };
 		D87DD157293F6F5200022F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DD156293F6F5200022F97 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		D801769E29437C94004CEDC4 /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
+		D82D05C22952E498007EFF21 /* ChatroomsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomsMenuController.swift; sourceTree = "<group>"; };
 		D841D12D2949E7F900DEB383 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		D850CFC12948CD78009AD909 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		D87DD153293F6F5200022F97 /* SlideOutMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		D87DD16A293FD00100022F97 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D82D05C22952E498007EFF21 /* ChatroomsMenuController.swift */,
 				D8C5D67E294E415A0058E834 /* BookmarksVC.swift */,
 				D8C16791294B1E7900854740 /* BookmarksController.swift */,
 				D8E2B590294A4B57005B2543 /* ListsController.swift */,
@@ -196,6 +199,7 @@
 				D888420B29474F710048920B /* CustomMenuHeaderView.swift in Sources */,
 				D87DD15B293F6F5200022F97 /* HomeController.swift in Sources */,
 				D8E2B591294A4B57005B2543 /* ListsController.swift in Sources */,
+				D82D05C32952E498007EFF21 /* ChatroomsMenuController.swift in Sources */,
 				D87DD157293F6F5200022F97 /* AppDelegate.swift in Sources */,
 				D841D12E2949E7F900DEB383 /* MenuItemCell.swift in Sources */,
 				D87DD159293F6F5200022F97 /* SceneDelegate.swift in Sources */,
