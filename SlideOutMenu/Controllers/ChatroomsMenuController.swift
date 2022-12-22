@@ -17,7 +17,6 @@ class ChatroomsMenuController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = .purple
         tableView.separatorStyle = .none
         tableView.backgroundColor = #colorLiteral(red: 0.3058823529, green: 0.2196078431, blue: 0.2862745098, alpha: 1)
         
@@ -41,6 +40,7 @@ class ChatroomsMenuController: UITableViewController {
         let label = ChatroomHeaderLabel()
         label.text = text
         label.textColor = #colorLiteral(red: 0.4745098039, green: 0.4078431373, blue: 0.4666666667, alpha: 1)
+        label.backgroundColor = #colorLiteral(red: 0.3058823529, green: 0.2196078431, blue: 0.2862745098, alpha: 1)
         return label
     }
     
